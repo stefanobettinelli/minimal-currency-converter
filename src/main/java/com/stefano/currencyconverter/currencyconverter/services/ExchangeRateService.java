@@ -43,7 +43,6 @@ public class ExchangeRateService {
         Exchange exchange = mapper.readValue(jsonString.toString(), Exchange.class);
         httpClient.close();
 
-        System.out.println(exchange);
         if (exchange.getRates().values().size() == 0) return -1;
         return (double) exchange.getRates().values().toArray()[0];
     }
